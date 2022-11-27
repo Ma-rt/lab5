@@ -1,7 +1,5 @@
-import random
-import numpy as np
 import datetime
-
+import random
 
 visa_data_path = "visa.txt"
 mscd_data_path = "mscard.txt"
@@ -37,8 +35,12 @@ def get_all_days_between_dates(date1=(2021, 11, 1), date2=(2022, 11, 1)):
 
 def insert_missed_elements(data):
     for day in get_all_days_between_dates():
-        if data.get(day) == None:
+        if data.get(day) is None:
             data[day] = 0
+
+
+def restore_missed_data(data):
+    pass
 
 
 dt = get_data(mscd_data_path)
