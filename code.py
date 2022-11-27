@@ -1,16 +1,8 @@
-def del_random_data_blocks(data, del_procent=0.9):
-    if del_procent <= 0 and del_procent >= 1:
-        raise Exception()
-    for i in range(0, int(del_procent * len(data))):
-        data[random.randint(0, len(data) - 1)] = 0
-    return data
-
-
 def get_next_nonzero(data, current):
     for i in range(current, len(data)):
         if data[i] != 0:
             return i
-    return i - 1
+    return current
 
 
 def rest_data_corr(data):
